@@ -1,0 +1,19 @@
+.grayscale {
+    filter: grayscale(100%) !important;
+}
+
+a.nav-link {
+    padding: 4px 16px !important;
+    border-radius: 20px;
+}
+
+.link-active {
+    border: 1px solid white;
+    color: white;
+    transition: 0.3s;
+}
+
+.link-active:hover {
+    background-color: white;
+    color: #198754;
+}
