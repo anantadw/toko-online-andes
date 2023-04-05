@@ -12,9 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link <?php echo (uri_string() == 'user/games') ? 'link-active' : ''; ?>" href="/user/games">User</a>
                 </li>
-                <?php if (uri_string() == 'user/games' || uri_string() == 'user/games/cart') : ?>
+                <?php if (uri_string() != 'admin/games') : ?>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo (uri_string() == 'user/games/cart') ? 'link-active' : ''; ?>" href="/user/games/cart"><i class="bi bi-cart"></i><?php if (session('cart')) : ?><span class="badge rounded-pill text-bg-danger ms-1"><?php echo count(session('cart')); ?></span><?php endif; ?></a>
+                        <a class="nav-link <?php echo (uri_string() == 'user/cart') ? 'link-active' : ''; ?>" href="/user/cart"><i class="bi bi-cart"></i><?php if (session('cart')) : ?><span class="badge rounded-pill text-bg-danger ms-1"><?php echo count(session('cart')); ?></span><?php endif; ?></a>
                     </li>
                 <?php endif; ?>
             </ul>

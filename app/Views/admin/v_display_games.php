@@ -24,10 +24,6 @@
                             <?php echo $game['nama_game'] ?>
                             <span class="badge rounded-pill <?php echo $color = ($game['stok_game'] == 0) ? 'text-bg-danger' : 'text-bg-success'; ?>"><?php echo $game['stok_game'] ?></span>
                         </h5>
-                        <!-- <div class="mb-4">
-                            <span class="badge rounded-pill text-bg-primary">PS4</span>
-                            <span class="badge rounded-pill text-bg-primary">PC</span>
-                        </div> -->
                         <h5 class="card-subtitle text-muted my-3">Rp<?php echo number_format($game['harga_game'], 0, ',', '.') ?></h5>
                         <div class="d-flex justify-content-end mt-5">
                             <!-- <button type="button" class="btn btn-warning"><i class="bi bi-pencil-square me-2"></i>Edit</button> -->

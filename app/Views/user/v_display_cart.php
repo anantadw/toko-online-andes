@@ -23,12 +23,12 @@
                                             <h6>
                                                 <?php echo $game['nama_game'] ?>
                                             </h6>
-                                            <p class="card-subtitle text-muted my-3">Rp<?php echo number_format($game['harga_game'], 0, ',', '.') ?></p>
+                                            <p class="card-subtitle my-3">Rp<?php echo number_format($game['harga_game'], 0, ',', '.') ?></p>
                                         </div>
                                         <div class="col">
                                             <p>Jumlah Beli</p>
                                             <div class="d-flex align-items-center">
-                                                <form action="/user/games/cart/quantity" method="post">
+                                                <form action="/user/cart/quantity" method="post">
                                                     <input type="hidden" name="type" value="subtract">
                                                     <input type="hidden" name="index" value="<?php echo $index; ?>">
                                                     <button type="submit" class="btn btn-outline-secondary" <?php if ($game['stok_game'] == 1) echo 'disabled'; ?>>-</button>
@@ -36,7 +36,7 @@
                                                 <p class="mx-3 mb-0">
                                                     <?php echo $game['stok_game']; ?>
                                                 </p>
-                                                <form action="/user/games/cart/quantity" method="post">
+                                                <form action="/user/cart/quantity" method="post">
                                                     <input type="hidden" name="type" value="add">
                                                     <input type="hidden" name="index" value="<?php echo $index; ?>">
                                                     <button type="submit" class="btn btn-outline-secondary">+</button>
@@ -71,6 +71,11 @@
                         $total += $game['harga_game'] * $game['stok_game'];
                     }; ?>
                     <h5>Rp<?php echo number_format($total, 0, ',', '.') ?></h5>
+                </div>
+            </div>
+            <div class="card shadow-sm mt-2">
+                <div class="card-body">
+                    <a href="/user/checkout" class="btn btn-primary d-block">Checkout</a>
                 </div>
             </div>
         </div>

@@ -29,6 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->addRedirect('/', '/user/games');
 $routes->get('/admin/games', 'GameController::index');
 $routes->get('/admin/games/create', 'GameController::create');
 $routes->post('/admin/games/create', 'GameController::store');
@@ -36,9 +37,11 @@ $routes->post('/admin/games/(:num)', 'GameController::delete/$1');
 
 $routes->get('/user/games', 'CartController::index');
 $routes->post('/user/games', 'CartController::addToCart');
-$routes->delete('/user/games/cart', 'CartController::deleteItem');
-$routes->get('/user/games/cart', 'CartController::cart');
-$routes->post('/user/games/cart/quantity', 'CartController::quantity');
+$routes->delete('/user/cart', 'CartController::deleteItem');
+$routes->get('/user/cart', 'CartController::cart');
+$routes->post('/user/cart/quantity', 'CartController::quantity');
+$routes->get('/user/checkout', 'CartController::checkout');
+$routes->post('/user/checkout', 'CartController::store');
 
 /*
  * --------------------------------------------------------------------
